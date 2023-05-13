@@ -25,12 +25,12 @@ To run this project, follow these steps:
 1. Create a [virtual environment](https://docs.python.org/3/library/venv.html) able to run Python
 2. Install the required dependencies by running:\
 **pip install -r requirements.txt**.
-3. Collect the static files:\
+3. Create a file called .env and specify 3 variables. For further help the first answer [here](https://stackoverflow.com/questions/15209978/where-to-store-secret-keys-django)\
+  3.1 SECRET_KEY - a random secret value\
+  3.2 DATABASE_URL - Must be PostreSQL database\
+  3.3 REDIS_URL - A valid link to a redis server which is used for websocket connections
+4. Collect the static files:\
 **python manage.py collectstatic**.
-4. Create a file called .env and specify 3 variables. For further help the first answer [here](https://stackoverflow.com/questions/15209978/where-to-store-secret-keys-django)\
-  4.1 SECRET_KEY - a random secret value\
-  4.2 DATABASE_URL - Must be PostreSQL database\
-  4.3 REDIS_URL - A valid link to a redis server which is used for websocket connections
 5. Once you have specified your connections to each service, run the following command to migrate data to your database:\
 **python manage.py migrate**\
 read more about migrations [here](https://docs.djangoproject.com/en/4.2/topics/migrations/)
