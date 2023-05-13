@@ -45,6 +45,3 @@ To test run the following command after cloning the repository and installing de
 ## How to Deploy Your Own Version
 To deploy your own version, modify the values in [settings.py](game_website/settings.py) to suit your needs.
 Depending on your hosting service other additions or modifications may be needed. Please make sure to check the official documentation from your hosting service.
-
-## How You Can Contribute
-If you want to contribute to this project, either get in touch with the team at u14ar20@abdn.ac.uk or choose one of the [open issues](https://github.com/12calert/ProjectCS3028/issues) in this repository and create a pull request with the proposed change. Someone from the team will review the code accordingly.
