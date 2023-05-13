@@ -1,0 +1,771 @@
+/* IMPORTANT: Some of the styles between pages are not consistent, make sure they are consistent.
+when possible, try to resuse classes over webpages to keep a consistent design.
+base.html, home.html and researcher_login.html do not use bootstrap so feel free to adapt as 
+you wish and do not have a consistent design with game_view.html
+if any questions please ask
+-Alberto */
+
+/* body styles to be changed according to website design */
+/* general classes to be used for all pages */
+body {
+  font-family: 'Poppins', sans-serif !important;
+  margin: 0;
+  color: black;
+  font-size: 22px;
+  min-height: 100vh;
+  background: #f1f1f1;
+  }
+button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #ff5733;
+  border-radius: 12px;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+.flex-container-child{
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  margin: 0 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container-child-2{
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  margin: 0 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.flex-container-child img {
+  margin-left:400px;
+}
+
+.flex-container-child-2 img {
+  margin-right:400px;
+}
+
+.flex-photo p {
+  margin: 10px 0;
+}
+
+.flex-photo-2 p {
+  margin: 10px 0;
+}
+
+.flex-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-photo-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* center style sets margins for content of page (top is 56 so as not to overlap with navbar) */ 
+.center{
+  margin: 56px 5px 5px 5px;
+}
+
+/* styles for the navigation bar, can change colours according to colour scheme of website*/
+.navbar {
+  margin: 0;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar li {
+  float: left;
+}
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+.navbar li a:hover:not(.active) {
+  background-color: #333;
+}
+
+/* styles for footer, font and colours can be changed*/
+footer {
+  margin: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  width: 100.4vw;
+  margin-left: -11px;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer div{
+  margin: 5px;
+}
+footer img {
+  margin: 5px;
+  float:left;
+}
+footer ul {
+  padding: 0;
+  list-style-type: none;
+}
+footer ul li {
+  font-weight: bold;
+}
+footer ul li ul {
+  margin-top:10px;
+}
+footer ul li ul li{
+  font-weight: normal;
+}
+
+/* classes specific to home.hmtl (currently none exclusive to this page)*/
+.container-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.heading-edit {
+  text-align: center;
+}
+
+.paragraph-edit {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 63vw;
+}
+
+/* classes used in game_view.html */
+.collapsible {
+  background-color: #777;
+  color: white;
+  padding: 18px;
+  width: 100vw;
+  border: none;
+  text-align: center;
+  outline: none;
+  margin-left: -11px;
+  margin-top: -20px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  text-align: center;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.game {
+  width: 1000px;
+  height: 1000px;
+}
+
+/* CHAT */
+ 
+.chat {
+  background-color: #fff;
+  border-radius: 0px;
+  box-shadow: 0px 0px 10px #ccc;
+  height: 500px;
+  overflow-y: scroll;
+  overflow-y: auto;
+  padding-top: 20px;
+  
+}
+
+#chat-message-input {
+  border: solid;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+#chat-message-submit {
+  background-color: #0084ff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+#chat-message-submit:hover {
+  background-color: blue;
+}
+
+/* end of chat */
+
+/* changes to distinguish the messages sent in the app */
+
+.chat-sent {
+  color: black;
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  margin-right: 0px;
+  align-self: flex-start;
+  display: block;
+  word-wrap: break-word;  
+}
+
+.chat-received {
+  color: white;
+  display: block;
+  background-color: #3333ff;
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-right: 150px;
+  align-self: flex-start;
+  word-wrap: break-word;  
+}
+
+/* end of changes to distinguish the messages sent in the app */
+
+/* style of two boxes that they distinguish map and chat */
+  .col-sm-8.game {
+    background-color:white;
+    height: 550px;
+    border-color: red; /* change it after from red to black or what is suitable*/
+    border-style: solid;
+  }
+ 
+/* chat styling */
+  #chat-log {
+    max-height: 600px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  .col-sm-4.chat {
+    height: 550px;
+    border-color: #333;
+    border-style: solid;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+/* style of the buttons */
+.button {
+  border: none;
+  color: white;
+  padding: 20px 32px; /* measurements of how big/small you want it */
+  text-align: center;
+  display: inline-block;
+  font-size: large;
+  font-weight: bold;
+  /* Position of buttons. Please always use 
+  % and not px to be responsive in all screens */
+  margin:5% 15% 5% 20% ;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 17px;
+}
+
+.button-home {
+  padding: 18px 50px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.button-home:hover {
+  background-color: #333;
+}
+    
+.button1 {
+  background-color: green; 
+}
+    
+.button1:hover {
+  background-color: #333;
+}
+    
+.button2 {
+  background-color: red;          
+}
+    
+.button2:hover {
+  background-color: #333;
+}
+
+.button1, .button2 {
+  margin-right: -40px;
+  width: 250px;
+  border-radius: 5px;
+  border: 0;
+}
+
+/* buttons in the all_rooms */
+.button3 {
+  background-color: #e0ac1c;          
+}
+    
+.button3:hover {
+  background-color: #333;
+}
+
+.button3 {
+  margin-right: -40px;
+  width: 250px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.mycolorfont {
+  color: black !important;
+}
+
+.btn-primary {
+  background-color: #e0ac1c !important;
+  border-color: #e0ac1c !important;
+}
+
+.card {
+  height: 100%;
+}
+
+.weightonfont {
+  font-weight: bold;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+.btn:hover {
+  background-color: rgb(126, 126, 126) !important;
+  color: #fff;
+}
+
+/* classes used in researcher login */
+.login-container {
+  width: 500px;
+  margin: 100px auto;
+  }
+  
+  .form-group {
+  margin-bottom: 20px;
+  }
+  
+  label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  margin-top: 25px;
+  }
+  
+  input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+  width: 250px;
+  height: 50px;
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border: 0;
+  background-color: #e0ac1c;
+  color: #fff;
+  cursor: pointer;
+  }
+
+.sign_in_instructions {
+  text-align: center;
+  font-weight: bold;
+}  
+
+input[type="submit"]:hover {
+  background-color: rgb(100, 100, 100);
+ }
+
+/* STYLING FOR all_rooms.html */
+
+#create-room {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.room-link {
+    color: #0077be;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.room-link:hover {
+    text-decoration: underline;
+}
+
+#rooms-list {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+#rooms-list th, #rooms-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#rooms-list th {
+    background-color: #f2f2f2;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.message {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons a {
+    display: block;
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #0077be;
+    text-decoration: none;
+}
+
+.buttons a:hover {
+    background-color: #eee;
+}
+
+/* Register button in researcher_registration page */
+button[type="register"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #ff5733;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="register"]:hover {
+    background-color: #333;
+}
+
+
+/* All_rooms unique room */
+input[type=unique_room], select {
+  width: 250px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+input[type=unique_room] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+input[type=unique_room]:hover {
+  background-color: #45a049;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.unique_room_box {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unique_room_box {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FOOTER STYLING */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+*{
+	padding:0;
+	margin:0;
+  text-align: center;
+}
+
+html{
+	background-color: #eaf0f2;
+}
+
+body{
+	font:16px/1.6 Arial,  sans-serif;
+  background: #323232 !important;
+  color: white !important;
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+}
+
+.footer-distributed{
+	background-color: #1e1e1e;
+	box-sizing: border-box;
+	/* width: 100%; */
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+/* Footer Center */
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #e0ac1c;
+	text-decoration: none;;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Here is the code for Responsive Footer */
+@media (max-width: 880px) {
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+}
+/* END OF FOOTER STYLE */ 
+
+/* alert error message login page */
+
+.alert-danger {
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border: 5px solid red;
+}
+ 
+.error-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: text-bottom;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23721c24' width='24' height='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+}
+
+/* the color of the text for form errors */
+.errorlist
+    {
+        color: red;
+        list-style: none;
+    }
+

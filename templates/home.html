@@ -1,0 +1,79 @@
+{% extends 'base.html' %} <!-- Extends the base.html template -->
+{% load static %} <!-- Loads the Django static files -->
+{% block title %}Home{% endblock %} <!-- Sets the title of the page to 'Home' -->
+{% block content %} <!-- Begins the content block -->
+<head>
+    <!-- Load the w3.css and Raleway font from external sources -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+{% csrf_token %} <!-- Include the CSRF token for security -->
+<!-- Header -->
+<body>
+    <!-- Container for centered content with a max-width of 1400px -->
+    <div class="w3-content" style="max-width:1400px">
+        <!-- Header -->
+        <header class="w3-container w3-center w3-padding-32">
+            <h1><b>Welcome to Experiment.io</b></h1>
+            <h2> A place to open your experiment to the world </h2>
+        </header>
+        <!-- Grid -->
+        <div class="w3-row w3-center">
+          <div class="w3-card-4 w3-margin w3-white w3-center" style="padding:10px;">
+            <div>
+              <h3> Choose the experiments which you want to take part in below.</h3>
+            </div>
+                <!-- Form for submitting game choice -->
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ chooseGame.as_p }}
+                    <button class="btn btn-primary" type="submit" style="width: 150px; height: 60px;">Join Game</button>
+                </form>
+            </div>
+            <div>
+              <h3>Want to create your own experiments?</h3>
+              <p><a href="{% url 'researcher_registration' %}">Register for an account</a></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End of equal-sized columns -->
+</body>
+{% endblock %}
+{% block javascript %}
+<script>
+    // Define a function to retrieve a cookie by name
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Check if the cookie's name matches the one we're looking for
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              // Decode and return the cookie's value
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      
+      // When the document is ready, execute this code
+      $(document).ready(function() {
+        // Send a POST request to the server
+        $.ajax({
+          type: 'POST', // Set the HTTP request method
+          url: "{% url 'set_screensize' %}", // Specify the URL to send the request to
+          headers: {
+            "X-CSRFToken": getCookie("csrftoken") // Include the CSRF token in the request headers
+          },
+          data: {
+            "width": window.screen.width, // Include the screen width in the request data
+            "height": window.screen.height // Include the screen height in the request data
+          },
+        })
+      });  
+</script>
+{% endblock %}
