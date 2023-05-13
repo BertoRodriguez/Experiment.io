@@ -27,7 +27,7 @@ To run this project, follow these steps:
 **pip install -r requirements.txt**.
 3. Collect the static files:\
 **python manage.py collectstatic**.
-4. Create a file called .env and specify 3 variables. For further help the first answer [here](https://stackoverflow.com/questions/15209978/where-to-store-secret-keys-django)\
+4. Create a file called .env and specify 3 variables. For further help see the first answer [here](https://stackoverflow.com/questions/15209978/where-to-store-secret-keys-django)\
   3.1 SECRET_KEY - a random secret value\
   3.2 DATABASE_URL - Must be PostreSQL database\
   3.3 REDIS_URL - A valid link to a redis server which is used for websocket connections
